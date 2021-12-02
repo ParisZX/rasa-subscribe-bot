@@ -5,34 +5,44 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- subscribe:
-    use_entities: true
-- inform:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-entities: []
+  - greet
+  - order_takeout
+  - provide_food_category
+  - give_information
+  - finish_order
+  - goodbye
+  - bot_challenge
+entities:
+  - category
+  - pizza_topping
+  - souvlaki_info
 slots:
-  email:
-    type: any
+  category:
+    type: categorical
+    values:
+      - pizza
+      - souvlaki
+    influence_conversation: true
+  pizza_topping:
+    type: text
+  souvlaki_info:
+    type: text
 responses:
   utter_greet:
-  - text: Γειά σου! Πώς μπορώ να σε βοηθήσω;
-  - text: Γειά!
-  utter_ask_email:
-  - text: Ποια είναι η διεύθυνση ηλεκτρονικού ταχυδρομείου σας;
-  utter_subscribed:
-  - text: Έλεγξε τα εισερχόμενά σου στο {email} για να ολοκληρώσεις την εγγραφή σου στο ενημερωτικό δελτίο!
-  - text: Είσαι έτοιμος! Έλεγξε τα εισερχόμενά σου στο {email} για να επιβεβαιώσεις τη συνδρομή σου.
+  - text: Hi there! How can I help you?
+  utter_accept_order_request:
+  - text: Sure, what would you like to order? We offer pizza or souvlaki.
+  utter_ask_toppings:
+  - text: What kind of toppings do you want your pizza to have? We offer pepperoni, mushrooms, olives and peppers.
+  utter_ask_souvlaki_info:
+  - text: What would you like your souvlaki to have? We offer ketchup, mustard or tzatziki.
+  utter_pizza_price:
+  - text: Your order total is 5 euros.
+  utter_souvlaki_price:
+  - text: Your order total is 3 euros.
+  utter_thank_you_for_order:
+  - text: Thank you for your order. It will be delivered in approximately 30 minutes!
+  utter_goodbye:
+  - text: Goodbye!
   utter_iamabot:
-  - text: Είμαι bot, και έχω δημιουργηθεί με τη χρήση του Rasa.
-
-actions: []
-forms:
-  newsletter_form:
-    required_slots:
-      email:
-      - type: from_text
-e2e_actions: []
+  - text: I'm a bot, powered by Rasa.

@@ -3,29 +3,71 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - Γεια
-    - Γεια σου!
-    - Γεια σου
-    - Καλή μέρα
-    - Καλημέρα
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
 
-- intent: subscribe
+- intent: order_takeout
   examples: |
-    - Θέλω να λάβω το ενημερωτικό δελτίο
-    - Μπορείτε να μου στείλετε το ενημερωτικό δελτίο;
-    - Μπορείτε να με εγγραφείτε για το ενημερωτικό δελτίο;
+    - I want to order
+    - Can I order some food?
+    - I'd like to order 
+    - I want some takeout
+    - Could I order takeout?
+    - I wanna eat some takeout
 
-- intent: inform
+- intent: provide_food_category
   examples: |
-    - Το email μου είναι example@example.com
-    - random@example.com
-    - Στείλτε το στη διεύθυνση any@example.com
-    - Το email είναι something@example.com
+    - I'd like a [pizza](category)
+    - Can I please order a [pizza](category)?
+    - I want some [souvlaki](category)
+    - My order is for [souvlaki](category)
+    - [pizza](category) please
+    - [pizza](category)
+    - gimme a [pizza](category)
+    - [souvlaki](category) please
+    - [souvlaki](category)
+    - gimme a [souvlaki](category)
+
+- synonym: souvlaki
+  examples: |
+    - pita
+    - gyros
+
+- intent: give_information
+  examples: |
+    - I want [pepperoni](pizza_topping) and [mushrooms](pizza_topping)
+    - Can my pizza have [mushrooms](pizza_topping) and [olives](pizza_topping)
+    - I'd like my pizza to have [peppers](pizza_topping)
+    - I want my souvlaki with [ketchup](souvlaki_info) and [mustard](souvlaki_info)
+    - just [ketchup](souvlaki_info)
+    - I'd like some [tzatziki](souvlaki_info) with my souvlaki
+    - [tzatziki](souvlaki_info) please
+
+- intent: finish_order
+  examples: |
+    - That's all, thanks
+    - That would be all
+    - I finished my order
+    - Ok, that's all
+    - Ok, I'm done with my order
+    - Nothing more, thanks
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Thanks, bye
+    - great, cya
+    - cu
+    - goodbye
+    - goodnight
+    - bb
 
 - intent: bot_challenge
   examples: |
-    - είσαι bot;
-    - είσα άνθρωπος;
-    - μήπως μιλάω με ένα bot;
-    - μιλάω με άνθρωπο;
-    - τι είσαι;
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

@@ -1,10 +1,47 @@
 version: "2.0"
 
 stories:
-- story: greet and subscribe
+
+- story: take pizza order
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: subscribe
-  - action: newsletter_form
-  - active_loop: newsletter_form
+  - intent: order_takeout
+  - action: utter_accept_order_request
+  - intent: provide_food_category
+    entities:
+    - category: pizza
+  - slot_was_set:
+    - category: pizza
+  - action: utter_ask_toppings
+  - intent: give_information
+    entities:
+    - pizza_topping: pepperoni
+    - pizza_topping: mushrooms
+    - pizza_topping: peppers
+    - pizza_topping: olives
+  - action: utter_pizza_price
+  - intent: finish_order
+  - action: utter_thank_you_for_order
+
+- story: take souvlaki order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_takeout
+  - action: utter_accept_order_request
+  - intent: provide_food_category
+    entities:
+    - category: souvlaki
+  - slot_was_set:
+    - category: souvlaki
+  - action: utter_ask_souvlaki_info
+  - intent: give_information
+    entities:
+    - souvlaki_info: ketchup
+    - souvlaki_info: mustard
+    - souvlaki_info: tzatziki
+  - action: utter_souvlaki_price
+  - intent: finish_order
+  - action: utter_thank_you_for_order
+  
