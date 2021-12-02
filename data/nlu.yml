@@ -38,9 +38,9 @@ nlu:
 
 - intent: give_information
   examples: |
-    - I want [pepperoni](pizza_topping) and [mushrooms](pizza_topping)
-    - Can my pizza have [mushrooms](pizza_topping) and [olives](pizza_topping)
-    - I'd like my pizza to have [peppers](pizza_topping)
+    - I want [pepperoni](pizza_toppings) and [mushrooms](pizza_toppings)
+    - Can my pizza have [mushrooms](pizza_toppings) and [olives](pizza_toppings)
+    - I'd like my pizza to have [peppers](pizza_toppings)
     - I want my souvlaki with [ketchup](souvlaki_info) and [mustard](souvlaki_info)
     - just [ketchup](souvlaki_info)
     - I'd like some [tzatziki](souvlaki_info) with my souvlaki

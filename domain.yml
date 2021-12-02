@@ -14,7 +14,7 @@ intents:
   - bot_challenge
 entities:
   - category
-  - pizza_topping
+  - pizza_toppings
   - souvlaki_info
 slots:
   category:
@@ -23,10 +23,10 @@ slots:
       - pizza
       - souvlaki
     influence_conversation: true
-  pizza_topping:
-    type: text
+  pizza_toppings:
+    type: list
   souvlaki_info:
-    type: text
+    type: list
 responses:
   utter_greet:
   - text: Hi there! How can I help you?
@@ -37,9 +37,9 @@ responses:
   utter_ask_souvlaki_info:
   - text: What would you like your souvlaki to have? We offer ketchup, mustard or tzatziki.
   utter_pizza_price:
-  - text: Your order total is 5 euros.
+  - text: OK! Your order is {category} with toppings {pizza_toppings}. Your order total is 5 euros.
   utter_souvlaki_price:
-  - text: Your order total is 3 euros.
+  - text: OK! Your order is {category} with {souvlaki_info}. Your order total is 3 euros.
   utter_thank_you_for_order:
   - text: Thank you for your order. It will be delivered in approximately 30 minutes!
   utter_goodbye:
