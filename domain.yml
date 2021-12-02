@@ -1,0 +1,38 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- subscribe:
+    use_entities: true
+- inform:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+entities: []
+slots:
+  email:
+    type: any
+responses:
+  utter_greet:
+  - text: Hello! How can I help you?
+  - text: Hi!
+  utter_ask_email:
+  - text: What is your email address?
+  utter_subscribed:
+  - text: Check your inbox at {email} in order to finish subscribing to the newsletter!
+  - text: You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+
+actions: []
+forms:
+  newsletter_form:
+    required_slots:
+      email:
+      - type: from_text
+e2e_actions: []

@@ -1,0 +1,6 @@
+*.db
+.rasa
+models
+venv
+*.db-shm
+*.db-wal
