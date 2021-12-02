@@ -3,28 +3,29 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - Hi
-    - Hey!
-    - Hallo
-    - Good day
-    - Good morning
+    - Γεια
+    - Γεια σου!
+    - Γεια σου
+    - Καλή μέρα
+    - Καλημέρα
 
 - intent: subscribe
   examples: |
-    - I want to get the newsletter
-    - Can you send me the newsletter?
-    - Can you sign me up for the newsletter?
+    - Θέλω να λάβω το ενημερωτικό δελτίο
+    - Μπορείτε να μου στείλετε το ενημερωτικό δελτίο;
+    - Μπορείτε να με εγγραφείτε για το ενημερωτικό δελτίο;
 
 - intent: inform
   examples: |
-    - My email is example@example.com
+    - Το email μου είναι example@example.com
     - random@example.com
-    - Please send it to anything@example.com
-    - Email is something@example.com
+    - Στείλτε το στη διεύθυνση any@example.com
+    - Το email είναι something@example.com
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - είσαι bot;
+    - είσα άνθρωπος;
+    - μήπως μιλάω με ένα bot;
+    - μιλάω με άνθρωπο;
+    - τι είσαι;
