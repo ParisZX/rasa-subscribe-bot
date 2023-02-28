@@ -16,7 +16,12 @@ intents:
 entities: []
 slots:
   email:
-    type: any
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: newsletter_form
+        requested_slot: email
 responses:
   utter_greet:
   - text: Hello! How can I help you?
@@ -33,6 +38,5 @@ actions: []
 forms:
   newsletter_form:
     required_slots:
-      email:
-      - type: from_text
+    - email
 e2e_actions: []
