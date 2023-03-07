@@ -22,11 +22,19 @@ slots:
     values:
       - pizza
       - souvlaki
-    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: category
   pizza_toppings:
     type: list
+    mappings:
+      - type: from_entity
+        entity: pizza_toppings
   souvlaki_info:
     type: list
+    mappings:
+      - type: from_entity
+        entity: souvlaki_info
 responses:
   utter_greet:
   - text: Hi there! How can I help you?

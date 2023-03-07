@@ -4,3 +4,4 @@ models
 venv
 *.db-shm
 *.db-wal
+actions/__pycache__
